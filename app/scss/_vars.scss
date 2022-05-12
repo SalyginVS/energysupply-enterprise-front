@@ -1,23 +1,19 @@
-$accent: #fe3e57;
-$default: #8d8d8d;
-$title: #29282d;
+$accent: #48ac32;
+$default: #202120;
+$bg_def: #e5e5e5;
+$bg: #f4f6f7;
 
-%quicksand-400{
-  font-family: 'Quicksand-Regular', sans-serif;
+%montserrat-400{
+  font-family: 'Montserrat-Regular', sans-serif;
   font-weight: 400;
 }
 
-%quicksand-500{
-  font-family: 'Quicksand-Medium', sans-serif;
+%montserrat-500{
+  font-family: 'Montserrat-Medium', sans-serif;
   font-weight: 500;
 }
 
-%roboto-400{
-  font-family: 'Roboto-Regular', sans-serif;
-  font-weight: 400;
-}
-
-%roboto-700{
-  font-family: 'Roboto-Bold', sans-serif;
-  font-weight: 700;
+%montserrat-600{
+  font-family: 'Montserrat-SemiBold', sans-serif;
+  font-weight: 600;
 }

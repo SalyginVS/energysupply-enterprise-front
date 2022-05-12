@@ -1,12 +1,13 @@
 body{
-  color: $default;
+  @extend %montserrat-400;
   font-size: 16px;
-  line-height: 26px;
-  @extend %quicksand-500;
+  line-height: 30px;
+  color: $default;
+  background-color: $bg-def;
 }
 
 .container{
-  max-width: 1200px;
+  max-width: 1470px;
   margin: 0 auto;
   padding: 0 15px;
 }
