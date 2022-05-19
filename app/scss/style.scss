@@ -4,27 +4,134 @@
 @import "global";
 
 .header {
-  height: 100vh;
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center top;
-  color: #e5e5e5; /* убрать */
+  background-position: center bottom;
+  color: #ffffff;
+  z-index: 0;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+  
+  &__content {
+    height: 100vh;
+    position: relative;
+  }
 }
 
-.header::before {
-  content: '';
-  position: absolute;
+
+.menu {
+  position: fixed;
+  width: 100%;
   top: 0;
   left: 0;
+  color: $default;
+  background-color: $bg_menu;
+  z-index: 3;
+  
+  &__top-list {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: 120px;
+  }
+  
+  &__top-item + .menu__top-item {
+    padding-left: 35px;
+  }
+  
+  &__top-link {
+    @extend %montserrat-600;
+    font-size: 12px;
+    line-height: 15px;
+    color: $def_grey;
+    text-transform: uppercase;
+    &:hover {
+      color: $default;
+    }
+  }
+  &__top-link--active {
+    color: $default;
+  }
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  @extend %montserrat-500;
+  font-size: 14px;
+  line-height: 17px;
+  &__cabinet-link{
+    @extend %btn;
+  }
+  &__cabinet-link:first-letter{
+    text-transform: capitalize;
+  }
+}
+
+/*** menu__burger ***/
+.menu__burger {
+  display: block;
+  position: relative;
+  width: 34px;
+  height: 26px;
+  z-index: 2;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.menu__burger span {
+  position: absolute;
+  background-color: $default;
+  top: 13px;
+  width: 100%;
+  height: 2px;
+  transform: translateX(-50%);
+  transition: transform 0.3s ease 0s;
+}
+
+.menu__burger:before,
+.menu__burger:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  transform: translateX(-50%);
+  background-color: $default;
+  transition: transform 0.3s ease 0s;
+}
+
+.menu__burger:before {
+  top: 0;
+}
+
+.menu__burger:after {
   bottom: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.menu-top {
-
-
+.menu__burger.active span {
+  transform: scale(0);
 }
+
+.menu__burger.active:before {
+  transform: rotate(45deg) translateX(-50%);
+  top: 23px;
+}
+
+.menu__burger.active:after {
+  transform: rotate(-45deg) translateX(-50%);
+  bottom: 25px;
+}
+
 
 @import "media";
