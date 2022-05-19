@@ -3,6 +3,28 @@
 @import "reset";
 @import "global";
 
+.header {
+  height: 100vh;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  color: #e5e5e5; /* убрать */
+}
 
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.menu-top {
+
+
+}
 
 @import "media";
